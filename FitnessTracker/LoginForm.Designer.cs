@@ -24,7 +24,9 @@
             btnSignUp = new Button();
             lblTitle = new Label();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -95,19 +97,30 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(60, 290);
+            pictureBox1.Location = new Point(83, 276);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(272, 84);
+            pictureBox1.Size = new Size(226, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(83, 335);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(227, 62);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(224, 224, 224);
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(403, 483);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(lblTitle);
             Controls.Add(btnSignUp);
@@ -121,6 +134,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +147,6 @@
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Label lblTitle;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

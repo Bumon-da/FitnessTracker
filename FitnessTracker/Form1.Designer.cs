@@ -230,6 +230,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(600, 450);
             Controls.Add(lblDeadline);
             Controls.Add(lblTarget);
@@ -252,6 +253,7 @@
             Controls.Add(txtCaloriesBurned);
             Controls.Add(cmbDuration);
             Controls.Add(cmbWorkoutType);
+            ForeColor = SystemColors.WindowText;
             Name = "Form1";
             Text = "Fitness Tracker";
             ((System.ComponentModel.ISupportInitialize)trackTargetValue).EndInit();
