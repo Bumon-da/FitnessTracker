@@ -17,93 +17,96 @@
 
         private void InitializeComponent()
         {
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnSignUp = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-
-            // Form Settings
-            this.BackColor = System.Drawing.Color.White; // Clean white background
-            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50); // Dark gray text
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(350, 250); // Slightly larger form
-
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            btnSignUp = new Button();
+            lblTitle = new Label();
+            SuspendLayout();
+            // 
             // txtUsername
-            this.txtUsername.Location = new System.Drawing.Point(75, 80);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 27);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.PlaceholderText = "Username";
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.BackColor = System.Drawing.Color.White;
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-
+            // 
+            txtUsername.BackColor = Color.White;
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtUsername.ForeColor = Color.FromArgb(50, 50, 50);
+            txtUsername.Location = new Point(84, 92);
+            txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Username";
+            txtUsername.Size = new Size(225, 30);
+            txtUsername.TabIndex = 0;
+            // 
             // txtPassword
-            this.txtPassword.Location = new System.Drawing.Point(75, 120);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(200, 27);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-
+            // 
+            txtPassword.BackColor = Color.White;
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.ForeColor = Color.FromArgb(50, 50, 50);
+            txtPassword.Location = new Point(84, 138);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(225, 30);
+            txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
+            // 
             // btnLogin
-            this.btnLogin.Location = new System.Drawing.Point(75, 160);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(200, 35);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(0, 123, 255); // Blue button
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-
+            // 
+            btnLogin.BackColor = Color.FromArgb(0, 123, 255);
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(84, 184);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(225, 40);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
             // btnSignUp
-            this.btnSignUp.Location = new System.Drawing.Point(75, 200);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(200, 35);
-            this.btnSignUp.TabIndex = 3;
-            this.btnSignUp.Text = "Sign Up";
-            this.btnSignUp.UseVisualStyleBackColor = false;
-            this.btnSignUp.BackColor = System.Drawing.Color.White;
-            this.btnSignUp.ForeColor = System.Drawing.Color.FromArgb(0, 123, 255); // Blue text
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.FlatAppearance.BorderSize = 1;
-            this.btnSignUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 123, 255); // Blue border
-            this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-
+            // 
+            btnSignUp.BackColor = Color.White;
+            btnSignUp.FlatAppearance.BorderColor = Color.FromArgb(0, 123, 255);
+            btnSignUp.FlatStyle = FlatStyle.Flat;
+            btnSignUp.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignUp.ForeColor = Color.FromArgb(0, 123, 255);
+            btnSignUp.Location = new Point(84, 230);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(225, 40);
+            btnSignUp.TabIndex = 3;
+            btnSignUp.Text = "Sign Up";
+            btnSignUp.UseVisualStyleBackColor = false;
+            btnSignUp.Click += btnSignUp_Click;
+            // 
             // lblTitle
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(75, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(200, 41);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Fitness Tracker";
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 123, 255); // Blue title
-
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.FromArgb(0, 123, 255);
+            lblTitle.Location = new Point(84, 23);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(226, 41);
+            lblTitle.TabIndex = 4;
+            lblTitle.Text = "Fitness Tracker";
+            // 
             // LoginForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnSignUp);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Name = "LoginForm";
-            this.Text = "Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(403, 483);
+            Controls.Add(lblTitle);
+            Controls.Add(btnSignUp);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(50, 50, 50);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
