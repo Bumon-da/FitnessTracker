@@ -7,7 +7,7 @@ namespace FitnessTracker
 {
     public partial class Form1 : Form
     {
-        private string loggedInUserId;
+        private string loggedInUserId; // This will store the username (e.g., "Bumonda")
         private IMongoCollection<BsonDocument> usersCollection;
         private IMongoCollection<BsonDocument> workoutsCollection;
         private IMongoCollection<BsonDocument> goalsCollection;
@@ -16,10 +16,10 @@ namespace FitnessTracker
         private BsonDocument mostRecentWorkout = null;
         private BsonDocument mostRecentGoal = null;
 
-        public Form1(string userId)
+        public Form1(string username)
         {
             InitializeComponent();
-            loggedInUserId = userId;
+            loggedInUserId = username; // Store the username as the UserId
             InitializeMongoDB();
             InitializeControls();
         }
@@ -64,9 +64,20 @@ namespace FitnessTracker
         {
             try
             {
+                // Check if the logged-in user exists in the Users collection
+                var userFilter = Builders<BsonDocument>.Filter.Eq("Username", loggedInUserId);
+                var user = usersCollection.Find(userFilter).FirstOrDefault();
+
+                if (user == null)
+                {
+                    MessageBox.Show("Error: User not found. Please log in again.");
+                    return; // Exit the method if the user is not found
+                }
+
+                // If the user exists, proceed to log the workout
                 var workout = new BsonDocument
                 {
-                    { "UserId", loggedInUserId },
+                    { "UserId", loggedInUserId }, // Use the username as the UserId
                     { "Type", cmbWorkoutType.SelectedItem.ToString() },
                     { "Duration", cmbDuration.SelectedItem.ToString() },
                     { "CaloriesBurned", txtCaloriesBurned.Text },
@@ -100,7 +111,7 @@ namespace FitnessTracker
 
                 var goal = new BsonDocument
                 {
-                    { "UserId", loggedInUserId },
+                    { "UserId", loggedInUserId }, // Use the username as the UserId
                     { "GoalType", goalType },
                     { "TargetValue", trackTargetValue.Value },
                     { "Deadline", dtpDeadline.Value.ToUniversalTime() } // Store deadline in UTC

@@ -24,18 +24,19 @@ namespace FitnessTracker
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var username = txtUsername.Text;
-            var password = txtPassword.Text;
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
 
-            var filter = Builders<BsonDocument>.Filter.Eq("Username", username) & Builders<BsonDocument>.Filter.Eq("Password", password);
-            var user = usersCollection.Find(filter).FirstOrDefault();
+            // Validate the user (e.g., check if the username and password match in the database)
+            var userFilter = Builders<BsonDocument>.Filter.Eq("Username", username) & Builders<BsonDocument>.Filter.Eq("Password", password);
+            var user = usersCollection.Find(userFilter).FirstOrDefault();
 
             if (user != null)
             {
-                MessageBox.Show("Login successful!");
+                // Open Form1 and pass the username as the UserId
+                Form1 form1 = new Form1(username);
+                form1.Show();
                 this.Hide();
-                var mainForm = new Form1(user["_id"].ToString()); // Pass user ID to Form1
-                mainForm.Show();
             }
             else
             {
@@ -45,30 +46,7 @@ namespace FitnessTracker
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            var username = txtUsername.Text;
-            var password = txtPassword.Text;
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Please enter both username and password.");
-                return;
-            }
-
-            var existingUser = usersCollection.Find(new BsonDocument { { "Username", username } }).FirstOrDefault();
-            if (existingUser != null)
-            {
-                MessageBox.Show("Username already exists.");
-                return;
-            }
-
-            var newUser = new BsonDocument
-            {
-                { "Username", username },
-                { "Password", password }
-            };
-
-            usersCollection.InsertOne(newUser);
-            MessageBox.Show("User registered successfully!");
+            // Implement sign-up logic here if needed
         }
     }
 }
