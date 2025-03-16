@@ -17,11 +17,14 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             btnLogin = new Button();
             btnSignUp = new Button();
             lblTitle = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -88,12 +91,24 @@
             lblTitle.TabIndex = 4;
             lblTitle.Text = "Fitness Tracker";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(60, 290);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(272, 84);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(403, 483);
+            Controls.Add(pictureBox1);
             Controls.Add(lblTitle);
             Controls.Add(btnSignUp);
             Controls.Add(btnLogin);
@@ -105,6 +120,7 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +132,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Label lblTitle;
+        private PictureBox pictureBox1;
     }
 }
